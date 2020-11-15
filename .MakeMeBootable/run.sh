@@ -4,7 +4,7 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                   {Version 0.1}                                  *"
+echo "*                   {Version 0.3}                                  *"
 echo "********************************************************************"
 
 echo "Now the list of connected devices will appear.."; sleep 5;
@@ -25,13 +25,11 @@ case $? in
 esac
 (
 echo "10" ; sleep 1
-echo "# Getting Ready" ; sleep 25
+echo "# Getting Ready"
 echo "20" ; sleep 1
-echo "# Get Root Access.." ; sleep 10
-sudo-i
 echo "50" ; sleep 1
-echo "# Writing Image..." ; sleep 120
-cd $ADDRESS && rm -rf* && sudo dd if=$FILE of=$ADDRESS bs=1M;
+echo "# Writing Image..." 
+sudo dd if=$FILE of=$ADDRESS bs=1M;
 echo "75" ; sleep 1
 echo "# Finishing and Unmounting Selected device..." ; sleep 6
 sudo unmount $ADDRESS
@@ -39,7 +37,7 @@ echo "100" ; sleep 4
 echo "# Finished!"
 ) |
 zenity --progress \
-  --title="Writing Image.." \
+  --title="Writing ISO to drive" \
   --text="Version 0.01" \
   --percentage=0
 
