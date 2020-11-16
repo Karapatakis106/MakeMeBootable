@@ -4,9 +4,15 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                   {Έκδοση 11.20}                                *"
+cho "*                   {Έκδοση 11.20}                                  *"
 echo "********************************************************************"
 sudo apt ok
+alias ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"="usb123"
+if [[usb123 -eq 0]];
+  then
+    echo "Δεν έχετε συνδέσει usb drive. Κλείσιμο εφαρμογής...."; exit
+  else
+  echo "Έχεις συνδέσει usb drives..."
 echo "Η λίστα με τα συνδεδεμένα φλασάκια θα εμφανιστεί: "; sleep 5;
 ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"
 sleep 3;
