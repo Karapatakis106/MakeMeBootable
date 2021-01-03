@@ -4,15 +4,9 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                   {Version 11.20}                                *"
+echo "*                   {Version 11.20.1}                              *"
 echo "********************************************************************"
-sudo apt ok
-alias ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"="usb123"
-if [[usb123 -eq 0]];
-  then
-    echo "You haven't connected any usb drive. Exiting..."; exit
-  else
-  echo "You have connected usb drives..."
+
 echo "Now the list of connected usb drives will appear.."; sleep 5;
 ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"
 
