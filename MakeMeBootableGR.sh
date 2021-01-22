@@ -4,12 +4,12 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-cho "*                   {Έκδοση 11.20.1}                                *"
+echo "*                  {Έκδοση 11.20.3}                                *"
 echo "********************************************************************"
 echo "Η λίστα με τα συνδεδεμένα φλασάκια θα εμφανιστεί: "; sleep 5;
 ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"
 sleep 3;
-echo "Επιλέξτε το drive όπου θέλετε να γίνει bootable:  π.χ sdb";  sleep 10;
+echo "Επιλέξτε το drive όπου θέλετε να γίνει bootable:  π.χ sdb, sd1 ή sd2 κ.α";  sleep 10;
   read ADDRESS
 zenity --warning \
 --text="ΣΙΓΟΥΡΕΥΤΕΙΤΕ ΟΤΙ ΕΠΙΛΕΞΑΤΕ ΤΟ ΣΩΣΤΟ DRIVE!!!!!"
@@ -28,6 +28,9 @@ esac
 echo "10" ; sleep 1
 echo "# Προετοιμασία.."
 echo "20" ; sleep 1
+echo "# Διαμόρφωση του δίσκου...
+sudo umount dev/$ADDRESS
+sudo mkfs.fat /dev/$ADDRESS
 echo "50" ; sleep 1
 echo "# Αντιγράφεται το αρχείο ISO.." 
 sudo dd if=$FILE of=/dev/$ADDRESS bs=1M;
@@ -35,7 +38,7 @@ echo "75" ; sleep 1
 echo "# Αποτελειώνεται η εργασία και γίνεται εξαγωγή.." ; sleep 6
 sudo unmount /dev/$ADDRESS
 echo "100" ; sleep 4
-echo "# Τελείωσε!"
+echo "# Η διεργασία ολοκληρώθηκε!"
 ) |
 zenity --progress \
   --title="Writing Image.." \
