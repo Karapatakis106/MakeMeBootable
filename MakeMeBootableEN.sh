@@ -4,7 +4,7 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                  {Version 11.20.3}                               *"
+echo "*                  {Version 11.20.5}                               *"
 echo "********************************************************************"
 
 echo "Now the list of connected usb drives will appear.."; sleep 5;
@@ -45,7 +45,7 @@ echo "# Finished!"
 ) |
 zenity --progress \
   --title="Writing Image.." \
-  --text="Version 11.20.3" \
+  --text="Core Version 11.20" \
   --percentage=0
 
 if [ "$?" = -1 ] ; then
