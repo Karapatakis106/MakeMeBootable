@@ -4,7 +4,7 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                  {Version 11.20.5}                               *"
+echo "*                  {Version 11.20.6}                               *"
 echo "********************************************************************"
 
 echo "Now the list of connected usb drives will appear.."; sleep 5;
