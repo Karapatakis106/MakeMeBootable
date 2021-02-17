@@ -14,4 +14,10 @@
 
 > Free to use & edit
 
+> Portable
+
+> Small Size
+
+> Bootable at FAT Filesystem 
+
 > WARNING USE AT YOUR OWN RISK
