@@ -4,7 +4,7 @@ echo "********************************************************************"
 echo "*                                                                  *"
 echo "*                  MAKE ME BOOTABLE!                               *"
 echo "*                                                                  *"
-echo "*                  {Έκδοση 11.20.5}                                *"
+echo "*                  {Έκδοση 11.20.6}                                *"
 echo "********************************************************************"
 echo "Η λίστα με τα συνδεδεμένα φλασάκια θα εμφανιστεί: "; sleep 5;
 ls -la /dev/disk/by-id/ | grep "usb-" | grep -w "sd[b-z]"
@@ -42,11 +42,11 @@ echo "100" ; sleep 4
 echo "# Η διεργασία ολοκληρώθηκε!"
 ) |
 zenity --progress \
-  --title="Writing Image.." \
+  --title="Εγγραφή εικόνας..." \
   --text="Version 11.20" \
   --percentage=0
 
 if [ "$?" = -1 ] ; then
         zenity --error \
-          --text="An error occurred during writing"
+          --text="Προέκυψε ένα σφάλμα!"
 fi
