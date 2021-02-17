@@ -34,6 +34,7 @@ echo "20" ; sleep 1
 echo "# Formatting Drive..."
 sudo umount $ADDRESS
 sudo mkfs.fat $ADDRESS
+sudo mount $ADDRESS
 echo "50" ; sleep 1
 echo "# Writing Image..." 
 sudo dd if=$FILE of=/dev/$ADDRESS bs=1M;
