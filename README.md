@@ -20,4 +20,6 @@
 
 > Bootable at FAT Filesystem 
 
+> Usable On Virtual Machines 
+
 > WARNING USE AT YOUR OWN RISK
