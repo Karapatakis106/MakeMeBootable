@@ -40,7 +40,7 @@ echo "20" ; sleep 1
 echo "# Formatting Drive..."
 sudo umount $ADDRESS
 # FileSystem and Partition creation
-sudo mkfs.fat $ADDRESS
+sudo mkfs.ntfs $ADDRESS
 # Re-mounting disk
 sudo mount $ADDRESS
 # Image Writing
