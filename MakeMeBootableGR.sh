@@ -30,7 +30,7 @@ echo "# Προετοιμασία.."
 echo "20" ; sleep 1
 echo "# Διαμόρφωση του δίσκου...
 sudo umount dev/$ADDRESS
-sudo mkfs.fat /dev/$ADDRESS
+sudo mkfs.ntfs /dev/$ADDRESS
 sudo mount $ADDRESS
 echo "50" ; sleep 1
 echo "# Αντιγράφεται το αρχείο ISO.." 
